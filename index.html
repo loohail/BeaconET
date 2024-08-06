@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini App</title>
+    <title>Fun Facts Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         window.onload = function() {
@@ -28,15 +28,67 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: linear-gradient(135deg, #f7c6c7, #fffbf1);
+            font-family: 'Arial', sans-serif;
+            color: #333;
         }
-        iframe {
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #FF4500;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .fact {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin: 15px 0;
+        }
+        .fact:hover {
+            color: #FF4500;
+            cursor: pointer;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background: #FF4500;
             border: none;
-            width: 100%;
-            height: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background: #ff6347;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://loohail.github.io/BeaconET/" title="Mini App Content"></iframe>
+    <div class="container">
+        <h1>Fun Facts</h1>
+        <p>Welcome to our Fun Facts Mini App! Here, you'll discover interesting and amazing facts that will brighten your day. Click on the fact below to learn more!</p>
+        <div class="fact" onclick="displayFact()">Did you know? Click here!</div>
+        <a href="https://loohail.github.io/BeaconET/" class="button" target="_blank">Explore More</a>
+    </div>
+
+    <script>
+        function displayFact() {
+            // For demonstration purposes, this function will just alert a fun fact
+            alert("Here's a fun fact: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible!");
+        }
+    </script>
 </body>
 </html>
