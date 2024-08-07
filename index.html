@@ -16,6 +16,15 @@
 
             // Optionally expand the Mini App
             window.Telegram.WebApp.expand();
+
+            // Perform redirection after 3 seconds
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectUrl = urlParams.get('redirect');
+            if (redirectUrl) {
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 3000);
+            }
         };
     </script>
     <style>
