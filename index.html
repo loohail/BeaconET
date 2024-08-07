@@ -25,6 +25,16 @@
                     window.location.href = redirectUrl;
                 }, 3000);
             }
+
+            // Load and display a random fun fact
+            fetch('funfacts.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const facts = data.split('\n').filter(fact => fact.trim() !== '');
+                    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+                    document.getElementById('fun-fact').innerText = randomFact;
+                })
+                .catch(error => console.error('Error loading fun facts:', error));
         };
     </script>
     <style>
@@ -89,15 +99,8 @@
     <div class="container">
         <h1>Fun Facts</h1>
         <p>Welcome to our Fun Facts Mini App! Here, you'll discover interesting and amazing facts that will brighten your day. Click on the fact below to learn more!</p>
-        <div class="fact" onclick="displayFact()">Did you know? Click here!</div>
+        <div id="fun-fact" class="fact">Loading...</div>
         <a href="https://loohail.github.io/BeaconET/" class="button" target="_blank">Explore More</a>
     </div>
-
-    <script>
-        function displayFact() {
-            // For demonstration purposes, this function will just alert a fun fact
-            alert("Here's a fun fact: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible!");
-        }
-    </script>
 </body>
 </html>
