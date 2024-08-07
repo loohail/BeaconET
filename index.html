@@ -1,36 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beacon Ethiopia: Your Guide to Professional Success</title>
     <meta name="description" content="Discover expert advice on resume writing, job hunting, and building a stellar portfolio.">
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	   <script>
-        window.onload = function() {
-            // Initialize the Telegram Web App
-            window.Telegram.WebApp.ready();
-            
-            // Optionally set colors
-            window.Telegram.WebApp.setHeaderColor("#FF4500");
-            window.Telegram.WebApp.setBackgroundColor("#FFFFFF");
-
-            // Optionally expand the Mini App
-            window.Telegram.WebApp.expand();
-
-            // Perform redirection after 3 seconds
-            const urlParams = new URLSearchParams(window.location.search);
-            const redirectUrl = urlParams.get('redirect');
-            if (redirectUrl) {
-                setTimeout(() => {
-                    window.location.href = redirectUrl;
-                }, 6000);
-            }
-
-            // Load and display a random fun fact
-        
-    </script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -100,9 +75,9 @@
         .hidden-content {
             display: none;
         }
-		#countdown {
-        color: white; /* Change 'red' to any color you prefer */
-    }
+        #countdown {
+            color: white; /* Change 'white' to any color you prefer */
+        }
     </style>
 </head>
 <body>
@@ -167,7 +142,6 @@
         </article>
     </main>
 
-
     <script>
         function toggleContent(button) {
             const content = button.previousElementSibling;
@@ -188,12 +162,33 @@
                 countdownElement.innerText = countdown;
                 if (countdown <= 0) {
                     clearInterval(interval);
-                    countdownElement.innerText = " መልካም ዕድል!";
+                    countdownElement.innerText = "መልካም ዕድል!";
                 }
             }, 1000);
         }
 
-        window.onload = startCountdown;
+        window.onload = function() {
+            startCountdown();
+
+            // Initialize the Telegram Web App
+            window.Telegram.WebApp.ready();
+            
+            // Optionally set colors
+            window.Telegram.WebApp.setHeaderColor("#FF4500");
+            window.Telegram.WebApp.setBackgroundColor("#FFFFFF");
+
+            // Optionally expand the Mini App
+            window.Telegram.WebApp.expand();
+
+            // Perform redirection after 6 seconds
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectUrl = urlParams.get('redirect');
+            if (redirectUrl) {
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 6000);
+            }
+        };
 
         // Add a simple dark mode toggle
         const toggleDarkMode = () => {
