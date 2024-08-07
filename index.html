@@ -29,15 +29,7 @@
             }
 
             // Load and display a random fun fact
-            fetch('funfacts.txt')
-                .then(response => response.text())
-                .then(data => {
-                    const facts = data.split('\n').filter(fact => fact.trim() !== '');
-                    const randomFact = facts[Math.floor(Math.random() * facts.length)];
-                    document.getElementById('fun-fact').innerText = randomFact;
-                })
-                .catch(error => console.error('Error loading fun facts:', error));
-        };
+        
     </script>
     <style>
         body {
